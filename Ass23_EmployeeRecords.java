@@ -4,7 +4,7 @@ public class EmployeeRecords {
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company","root","Friends@3003");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/company","root","Password");
             Statement stmt = con.createStatement();
             stmt.executeUpdate("create database if not exists company");
             ResultSet rs = stmt.executeQuery("select * from employee");
