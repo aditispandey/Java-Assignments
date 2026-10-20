@@ -54,12 +54,12 @@ public class LibraryManagement extends JFrame {
     void connectDatabase() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection setup = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "Friends@3003");
+            Connection setup = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "password");
             Statement st = setup.createStatement();
             st.executeUpdate("create database if not exists library_management");
             st.close();
             setup.close();
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_management","root", "Friends@3003");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_management","root", "password");
             Statement st2 = con.createStatement();
             st2.executeUpdate(
                 "create table if not exists books (" + "book_id int primary key, " +
